@@ -1,0 +1,12 @@
+# enable apache rewrite engine
+RewriteEngine On
+RewriteRule ^api/v1/(.*)$ /exposition/api/v1/api.php?url=$1 [QSA]
+
+#RewriteRule "^foo\.html$"  "exposition/api/v1/api.php"  [QSA]
+
+ErrorDocument 404 /404.html
+
+
+
+
+
