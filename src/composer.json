@@ -10,6 +10,14 @@
         "donatj/mock-webserver": "^2.4"
     },
     "require": {
-        "ext-curl": "*"
-    }
+        "ext-curl": "*",
+        "tanguybernard/orm-demo-php": "dev-main"
+
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanguybernard/orm-demo-php.git"
+        }
+    ]
 }
