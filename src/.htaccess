@@ -2,7 +2,7 @@
 RewriteEngine On
 RewriteRule ^api/v1/(.*)$ /exposition/api/v1/api.php?url=$1 [QSA]
 
-#RewriteRule "^foo\.html$"  "exposition/api/v1/api.php"  [QSA]
+RewriteRule ^slimapi/(.*)$ /exposition/slimapi/
 
 ErrorDocument 404 /404.html
 

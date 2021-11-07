@@ -11,7 +11,9 @@
     },
     "require": {
         "ext-curl": "*",
-        "tanguybernard/orm-demo-php": "dev-main"
+        "tanguybernard/orm-demo-php": "dev-main",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5"
 
     },
     "repositories": [
