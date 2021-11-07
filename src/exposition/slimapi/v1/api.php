@@ -11,7 +11,11 @@ $app->addErrorMiddleware(   true, true, true);
 
 
 $app->get('/test', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
+    $response->getBody()->write("Hello world /test !");
+    return $response;
+});
+$app->get('/', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world from root / !");
     return $response;
 });
 
