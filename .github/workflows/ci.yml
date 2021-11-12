@@ -12,10 +12,12 @@ jobs:
           php-version: '8.0'
           tools: phpstan, composer
       - name: Validate composer.json and composer.lock
+        working-directory: ./src
         run: composer validate
-
       - name: Install dependencies
+        working-directory: ./src
         run: composer install --prefer-dist --no-progress --no-suggest
       - name: "Run tests"
         run: |
+          cd src
           vendor/bin/phpunit tests/
