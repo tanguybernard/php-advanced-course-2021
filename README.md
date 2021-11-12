@@ -20,3 +20,7 @@ https://www.stevenrombauts.be/2018/03/mock-api-requests-in-codeception-acceptanc
 ### Slim Framework
 
 https://akrabat.com/running-slim-4-in-a-subdirectory/
+
+### Github Actions
+
+https://blog.dayo.fr/2020/11/utiliser-les-github-actions-pour-php/
