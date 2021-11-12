@@ -3,7 +3,7 @@
 namespace Course\App;
 
 class Person{
-    public function __construct(public $firstName)
+    public function __construct(public $firstName = null)
     {
     }
 }

@@ -16,3 +16,7 @@ http://coreymaynard.com/blog/creating-a-restful-api-with-php/
 ### Mock
 
 https://www.stevenrombauts.be/2018/03/mock-api-requests-in-codeception-acceptance-tests/
+
+### Slim Framework
+
+https://akrabat.com/running-slim-4-in-a-subdirectory/

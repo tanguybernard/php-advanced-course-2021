@@ -2,7 +2,8 @@
     "name": "course/app",
     "autoload": {
         "psr-4": {
-            "Course\\App\\": "app/"
+            "Course\\App\\": "app/",
+	    "Course\\Infrastructure\\":"infrastructure/"
         }
     },
     "require-dev": {
@@ -13,8 +14,10 @@
         "ext-curl": "*",
         "tanguybernard/orm-demo-php": "dev-main",
         "slim/slim": "4.*",
-        "slim/psr7": "^1.5"
-
+        "slim/psr7": "^1.5",
+        "zircote/swagger-php": "^3.2",
+        "doctrine/orm": "^2.10",
+        "symfony/cache": "^5.3"
     },
     "repositories": [
         {
