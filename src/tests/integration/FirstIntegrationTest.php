@@ -27,10 +27,14 @@ final class FirstIntegrationTest extends TestCase
 
     public function testGetEntries(): void
     {
+        //Before
         $publicApi = new PublicApi();
-        $result = $publicApi->getEntries('http://localhost:8001');
-        //$result = $publicApi->getEntries('https://api.publicapis.org');
+        $url = 'http://localhost:8001';
 
+        //When
+        $result = $publicApi->getEntries($url);//'https://api.publicapis.org'
+
+        //Then
         $this->assertEquals($result, json_encode(['foo' => 'bar']));
 
     }
