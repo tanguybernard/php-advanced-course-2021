@@ -25,12 +25,8 @@ final class FirstIntegrationTest extends TestCase
         $this->server->setResponseOfPath('/entries', $response);
     }
 
-    public function test3(): void
+    public function testGetEntries(): void
     {
-
-        //$result = file_get_contents('http://localhost:8001/entries');
-        //echo "/foo returns " . $result;
-
         $publicApi = new PublicApi();
         $result = $publicApi->getEntries('http://localhost:8001');
         //$result = $publicApi->getEntries('https://api.publicapis.org');
