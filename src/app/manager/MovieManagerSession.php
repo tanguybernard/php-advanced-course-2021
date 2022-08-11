@@ -1,6 +1,6 @@
 <?php
-
 namespace Course\App\Manager;
+session_start();
 
 class MovieManagerSession implements MovieManagerInterface {
 
@@ -17,6 +17,6 @@ class MovieManagerSession implements MovieManagerInterface {
 
     public function findAll()
     {
-        return $_SESSION['movie'];
+        return $_SESSION['movie'] ?? [];
     }
 }

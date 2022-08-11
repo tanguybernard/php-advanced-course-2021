@@ -1,7 +1,6 @@
 <?php
 
 namespace Course\App\Controller;
-
 use Course\App\Manager\MovieManagerInterface;
 
 class MovieController{
@@ -35,7 +34,6 @@ class MovieController{
     {
 
         $input = (array) json_decode(file_get_contents('php://input'), TRUE);
-
         $this->movieManager->create($input);
 
     }
