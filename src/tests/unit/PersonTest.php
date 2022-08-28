@@ -10,5 +10,13 @@ final class PersonTest extends TestCase
         $person = new Person('Paul');
         $this->assertEquals('Paul', $person->firstName);
 
+
+    }
+
+    public function testShouldReturnFirstNameByDefault(): void
+    {
+        $person = new Person();
+        $this->assertNull($person->firstName);
+
     }
 }

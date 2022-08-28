@@ -1,9 +1,37 @@
 # PHP avancé
 
 
+## Install
+
+docker-compose up -d
+
+
+## Using
+
+### Basic API
+
+http://localohot:8080/api 
+
+#### Get movies
+
+GET: http://localhost:8080/api/v1/movies
+
+#### Post movie
+
+POST: http://localhost:8080/api/v1/movies
+
+    {
+    "id":5,
+    "movie": "Titanic"
+    }
+
+### Slim Api
+
+http://localhost:8080/slimapi
+
 ## Test
 
-    vendor/bin/phpunit tests
+    php vendor/bin/phpunit tests
 
 ## Credits
 

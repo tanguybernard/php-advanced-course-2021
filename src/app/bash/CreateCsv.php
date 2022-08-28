@@ -19,7 +19,7 @@ foreach (range($firstDate, $lastDate) as $date) {
     if(!is_dir($dateFolder)){
         continue;
     }
-    $files = array_diff(scandir($dateFolder), array('..', '.'));
+    $files = array_diff(scandir($dateFolder), array('..', '.'));//remove dir "." and ".."
     foreach ($files as $file) {
         $filePath = $path . '/' . $date . '/' . $file;
         $object = json_decode(file_get_contents($filePath));

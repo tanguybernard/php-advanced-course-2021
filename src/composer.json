@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "Course\\App\\": "app/",
-	    "Course\\Infrastructure\\":"infrastructure/"
+            "Course\\Courses\\": "courses/",
+	        "Course\\Infrastructure\\":"infrastructure/"
         }
     },
     "require-dev": {
@@ -17,7 +18,8 @@
         "slim/psr7": "^1.5",
         "zircote/swagger-php": "^3.2",
         "doctrine/orm": "^2.10",
-        "symfony/cache": "^5.3"
+        "symfony/cache": "^5.3",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "repositories": [
         {
