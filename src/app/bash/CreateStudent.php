@@ -1,11 +1,6 @@
 <?php
 
-class Student
-{
-    public function __construct(public $firstName, public $lastName, public $grades)
-    {
-    }
-
+trait Average{
     public function average(): float|int
     {
         return round((array_reduce($this->grades, function ($total, Grade $item) {
@@ -13,12 +8,69 @@ class Student
                 return $total;
             })) / count($this->grades),2);
     }
+}
+
+class Student
+{
+
+    use Average;
+
+    public function __construct(public $firstName, public $lastName, public $grades)
+    {
+    }
+
+    /*public function average(): float|int
+    {
+        return round((array_reduce($this->grades, function ($total, Grade $item) {
+                $total += $item->grade;
+                return $total;
+            })) / count($this->grades),2);
+    }*/
 
     public function __toString(): string
     {
         return "$this->firstName $this->lastName has an average of {$this->average()}";
     }
 
+}
+
+class Promotion {
+
+    use Average;
+
+    public $grades;
+    /** @var Student[] $students **/
+    public function __construct(public $students)
+    {
+        $this->setNotes();
+    }
+
+    public function setNotes():void {
+        foreach ($this->students as $student){
+            $this->grades[] = new Grade('moyenne', $student->average());
+        }
+    }
+
+    /*public function average(): float|int
+    {
+        return round((array_reduce($this->grades, function ($total, Grade $item) {
+                $total += $item->grade;
+                return $total;
+            })) / count($this->grades),2);
+    }*/
+
+    function getStudentMax(): Student{
+        $max =0;
+        $student = null;
+        foreach ($this->students as $item){
+            if($max <= $item->average()) {
+                $max = $item->average();
+                $student = $item;
+            }
+
+        }
+        return $student;
+    }
 }
 
 class Grade
@@ -40,65 +92,14 @@ class GradesFactory
     }
 }
 
-class GradeService {
-
-    /**
-     * @param Student[] $group
-     */
-    public function __construct(private array $group)
-    {
-    }
-
-    /**
-     * @throws Exception
-     */
-    function averageGroup(): float|int
-    {
-        if(empty($this->group)){
-            throw new Exception('There is no students in this group !');
-        }
-        return array_reduce($this->group, function ($total, Student $item) {
-                $total += $item->average();
-                return $total;
-            }) / count($this->group);
-    }
-
-    function getStudentMax() {
-        $max =0;
-        $student = null;
-        foreach ($this->group as $item){
-            if($max <= $item->average()) {
-                $max = $item->average();
-                $student = $item;
-            }
-
-        }
-        return $student;
-    }
-
-}
-
 $grades1 = GradesFactory::create(['math' => 18, 'fr' => 9, 'sport' => 12]);//new Grade(....), new Grade()
 $grades3 = GradesFactory::create(['math' => 2, 'fr' => 2, 'sport' => 2]);
 $grades2 = GradesFactory::create(['math' => 14, 'fr' => 16, 'sport' => 13]);
 $student1 = new Student("John", "Doe", $grades1);
-$student2 = new Student("Alice", "Lapin", $grades2);
-$student3 = new Student("Toto", "T", $grades3);
+$student2 = new Student("Alice", "Merveille", $grades2);
+$student3 = new Student("Aurélien", "Cotentin", $grades3);
 
 $group = [$student1, $student2, $student3];
-$service = new GradeService($group);
-
-try {
-    var_dump($service->averageGroup());
-} catch (Exception $e) {
-    //log
-}
-
-echo "Meilleure étudiant(e) : {$service->getStudentMax()}".PHP_EOL;
-
-
-
-
 
 function tri(Student $student1, Student $student2){
     if ($student1->average() === $student2->average()) {
@@ -112,3 +113,11 @@ usort($group, "tri");
 foreach ($group as $key => $value) {
     echo "$key: $value\n";
 }
+
+
+
+$promo = new Promotion($group);
+
+echo "PROMO".PHP_EOL;
+echo $promo->average().PHP_EOL;
+echo "Meilleur(e) étudiant(e): ".$promo->getStudentMax().PHP_EOL;
