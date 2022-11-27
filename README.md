@@ -42,6 +42,20 @@ http://localhost:8080/swagger-ui/
 
     php vendor/bin/phpunit tests
 
+
+## Postgresql
+
+psql -upostgres testdbcourse
+
+Creation produits
+
+    php doctrine_create_product.php MonSuperProduit
+
+Récupération produits
+
+    doctrine_get_product.php
+
+
 ## Credits
 
 ### General
