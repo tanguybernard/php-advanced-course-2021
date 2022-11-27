@@ -48,7 +48,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->get('/test', function (Request $request, Response $response, array $args) {
+$app->get('/mocked/movies', function (Request $request, Response $response, array $args) {
     $c = new MovieControllerForSlimApi();
     return $c->getMovies($response);
 });

@@ -8,9 +8,9 @@ docker-compose up -d
 
 ## Using
 
-### Basic API
+### Basic API (Pure PHP)
 
-http://localohot:8080/api 
+http://localhost:8080/api 
 
 #### Get movies
 
@@ -28,6 +28,15 @@ POST: http://localhost:8080/api/v1/movies
 ### Slim Api
 
 http://localhost:8080/slimapi
+
+Get Movies from Mock
+
+http://localhost:8080/slimapi/v1/mocked/movies
+
+
+## Swagger
+
+http://localhost:8080/swagger-ui/
 
 ## Test
 
