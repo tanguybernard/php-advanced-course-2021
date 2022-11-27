@@ -5,6 +5,10 @@ RewriteRule ^api/v1/(.*)$ /exposition/api/v1/api.php?url=$1 [QSA]
 RewriteRule ^slimapi/v1/.*$ /exposition/slimapi/v1/
 RewriteRule ^slimapi/v2/.*$ /exposition/slimapi/v2/
 
+# Swagger
+RewriteRule ^swagger-ui/(.*)$ /exposition/web/swagger/$1$2
+
+
 ErrorDocument 404 /404.html
 
 
