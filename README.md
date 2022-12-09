@@ -72,6 +72,19 @@ https://www.stevenrombauts.be/2018/03/mock-api-requests-in-codeception-acceptanc
 
 https://akrabat.com/running-slim-4-in-a-subdirectory/
 
+#### With Twig
+
+https://www.twilio.com/blog/adding-twig-as-a-view-renderer-to-slim-in-php
+
+#### With PHP DI
+
+https://akrabat.com/dependency-injection-in-slim-4/
+
 ### Github Actions
 
 https://blog.dayo.fr/2020/11/utiliser-les-github-actions-pour-php/
+
+
+### Template
+
+https://juliencrego.com/astuces/template-avec-ob_start-en-php-avance/

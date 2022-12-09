@@ -11,7 +11,3 @@ RewriteRule ^swagger-ui/(.*)$ /exposition/web/swagger/$1$2
 
 ErrorDocument 404 /404.html
 
-
-
-
-

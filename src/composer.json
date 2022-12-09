@@ -4,7 +4,9 @@
         "psr-4": {
             "Course\\App\\": "app/",
             "Course\\Courses\\": "courses/",
-	        "Course\\Infrastructure\\":"infrastructure/"
+	        "Course\\Infrastructure\\":"infrastructure/",
+	        "Course\\Exposition\\":"exposition/",
+	        "Course\\Config\\":"config/"
         }
     },
     "require-dev": {
@@ -19,7 +21,9 @@
         "zircote/swagger-php": "^3.2",
         "doctrine/orm": "^2.10",
         "symfony/cache": "^5.3",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "twig/twig": "^3.4",
+        "php-di/php-di": "^6.4"
     },
     "repositories": [
         {
