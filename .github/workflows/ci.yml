@@ -17,6 +17,9 @@ jobs:
       - name: Install dependencies
         working-directory: ./src
         run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Composer Dump Autoload
+        working-directory: ./src
+        run: composer dump-autoload
       - name: "Run tests"
         run: |
           cd src
