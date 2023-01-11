@@ -2,14 +2,14 @@ name: Github Actions for PHP with PHPUnit Tests
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: '8.1'
           tools: phpstan, composer
       #- name: Validate composer.json and composer.lock
       #  working-directory: ./src
